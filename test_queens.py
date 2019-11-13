@@ -1,6 +1,6 @@
 import pytest
 
-from main import solveNQueenProblem, foundSolutions, N, transformForDB
+from queen_util import solveNQueenProblem, foundSolutions, N, transformForDB
 
 def test_solutions_8_queens():
     board = [[0 for i in range(N)]
