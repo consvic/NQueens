@@ -39,7 +39,7 @@ def transformForDB(board):
             if board[row][column] == 1:
                 simpleBoardFormat.append(column)
 
-    solutions.append(simpleBoardFormat)
+    return simpleBoardFormat
 
 ''' This functions stores the data in the DB only if there are solutions'''
 def storeDataInDB():
@@ -108,13 +108,15 @@ def isValidSpot(board, row, column):
 
     return isValid
 
-def solveNQueenProblem(board, column):
+def solveNQueenProblem(printRes, board, column):
     res = False
 
     ''' Break recursion if we found a solution we print result and transform the data'''
     if column == N:
-        transformForDB(board)
-        printBoard(board)
+        simpleBoardFormat = transformForDB(board)
+        solutions.append(simpleBoardFormat)
+        if printRes:
+            printBoard(board)
         global k
         k = k + 1
         res = True
@@ -125,7 +127,7 @@ def solveNQueenProblem(board, column):
             ''' 1 is our Queen '''
             board[index][column] = 1
 
-            res = solveNQueenProblem(board, column + 1) or res
+            res = solveNQueenProblem(printRes, board, column + 1) or res
 
             ''' Backtrack in case we don't find a solution '''
             board[index][column] = 0
@@ -136,7 +138,7 @@ def main():
     board = [[0 for i in range(N)]
                 for j in range(N)]
 
-    if solveNQueenProblem(board, 0) == False:
+    if solveNQueenProblem(True, board, 0) == False:
         print("Sorry we could not find a solution")
         return
 

@@ -9,6 +9,7 @@ RUN apt-get update \
 
 RUN pip install sqlalchemy
 RUN pip install psycopg2-binary
+RUN pip install pytest==2.9.1
 
 WORKDIR /app
 
