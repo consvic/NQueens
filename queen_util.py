@@ -1,4 +1,5 @@
 ''' N-Queen problem with recursion (backtracking) '''
+# Reference code https://www.geeksforgeeks.org/printing-solutions-n-queen-problem/
 N = 8
 k = 1
 
