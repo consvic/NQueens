@@ -66,6 +66,8 @@ def isValidSpot(board, row, column):
 
     return isValid
 
+''' This function does all the magic, gives you the option to print the board results
+and starts the backtracking, you need and empty board and column 0 to start '''
 def solveNQueenProblem(printRes, board, column):
     res = False
 
@@ -92,6 +94,14 @@ def solveNQueenProblem(printRes, board, column):
     
     return res
 
+''' This test is mostly for tests, to try out new Ns,
+careful how you use it, might screw up the Ns'''
 def changeNQueen(newN):
     global N
     N = newN
+
+''' This function resets the global values '''
+def resetGlobal():
+    global N, k
+    N = 8
+    k = 1
