@@ -27,7 +27,7 @@ Now, let's go to the terminal shall we
 	docker exec -it app bash
 
 ### Actual code
-First you'll need to initialize the DB (very important!)
+First you'll need to initialize the DB with this command (very important!... but you only need to run it once)
 
     python3 db.py
 
@@ -35,6 +35,7 @@ And now you can run the program
 
     python3 main.py
 
+Inside you can play around with different Ns (in `queen_util.py`)
 
 ### Tests
 If you want to run the tests run inside the container's terminal
